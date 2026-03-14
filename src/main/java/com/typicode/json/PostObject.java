@@ -14,6 +14,16 @@ public class PostObject {
         this.body = body;
     }
 
+    @Override
+    public String toString() {
+        return "PostObject{" +
+                "userId=" + userId +
+                ", id=" + id +
+                ", title='" + title + '\'' +
+                ", body='" + body + '\'' +
+                '}';
+    }
+
     public int getUserId() {
         return userId;
     }
