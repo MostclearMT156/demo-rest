@@ -1,5 +1,7 @@
 package com.typicode.json;
 
+import java.util.Objects;
+
 public class PostObject {
     private int userId;
     private int id;
@@ -22,6 +24,19 @@ public class PostObject {
                 ", title='" + title + '\'' +
                 ", body='" + body + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PostObject that = (PostObject) o;
+        return id == that.id && Objects.equals(title, that.title) && Objects.equals(body, that.body);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, id, title, body);
     }
 
     public int getUserId() {
